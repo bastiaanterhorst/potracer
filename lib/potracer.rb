@@ -50,9 +50,8 @@ module Potracer
     #   end
     #   pbar.finish
 
-    def self.bitmap(bmp, width = nil, height = nil, map = 'RGB', &block)
+    def self.bitmap(bmp, width = nil, height = nil, map = 'RGB', params = Potracer::Params.new, &block)
       trace = new
-      params = Potracer::Params.new
       bits = make_bits(bmp, width, height, map)
 
       if block_given?
